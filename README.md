@@ -1,5 +1,5 @@
 # Sat Tools
-version 1\
+version 2\
 xhul - 2025\
 download: https://github.com/xhul-dev/Sat_Tools/releases
 \
@@ -9,24 +9,27 @@ reports: https://github.com/xhul-dev/Sat_Tools/issues
 
 This is a multi-boot Atlas CD image, so far including the following:
 - Artemio's 240p Test Suite 0.1
-- SDLoader 0.127d, 0.381 (both versions for compatibility purpose)
+- SDLoader 0.127d, 0.381
 - Save Game Copier 3.6.18 - 332 saves total
 - Save Game Extractor 0.99
 - Save Game Manager 5 - 45 firmwares total
+- Save To QR Code 1.000
 
 It should be useful mostly to people who use at least 2 of those on a regular basis, from physical CDs.\
 The project is also my own tribute to the wonderful Atlas software.\
-Once at the main screen, pressing A allows to view which main features each software has to offer.\
+At the main screen, pressing A allows to view which main features each software has to offer.\
 Feel free to let me know if something doesn't work as expected.\
 I wasn't able to test the functionality from any ODE, so i'm all ears.\
-Suggestions are also welcome, especially other useful tools that could be injected.\
-Before you ask, Save Data Manager doesn't seem to work properly from Atlas, sadly.
+Suggestions are also welcome, especially other useful tools that could be injected.
+
+Before you ask, the following won't be available:
+- Save Data Manager - partial incompatibility with Atlas
 
 ## documentation - Atlas
 
 by The Rockin'-B\
 version 05/12/04\
-original documentation: \README\ATLAS.TXT\
+original documentation: \\README\\ATLAS.TXT\
 web: http://www.rockin-b.de/saturn-atlascreator.html
 
 Changes since the original release:
@@ -37,8 +40,9 @@ Changes since the original release:
 
 by Artemio Urbina, hitomi2500\
 version 0.1\
-entry location: \ATS\\\
-web: https://segaxtreme.net/threads/sega-saturn-29th-anniversary-game-competition.25411/page-2#post-185171
+entry location: \\ATS\\\
+original documentation: \\README\\ATS.TXT\
+web: https://github.com/hitomi2500/240pTestSuite
 
 It's the original release, without any modification.
 
@@ -46,28 +50,28 @@ It's the original release, without any modification.
 
 by Murzik\
 version 0.127d, 0.381\
-entry location (1 for each version): \SDL1\\, \SDL2\\\
+entry location: \\SDL1\\, \\SDL2\\\
+original documentation: \\README\\SDL1.TXT, \\README\\SDL2.TXT\
 web: https://segaxtreme.net/threads/sdloader-v0-12-run-binaries-from-sd-card-and-backup-restore-saves.25275/
 
+For compatibility purpose, SDL uses 2 Atlas entries:
+- version 0.127d
+- version 0.381
+
 Version 0.381 includes more features, but it's not directly compatible with all machines.\
-If "SD card init error" is displayed when attempting to read|write from|to the card, you're concerned.\
-Fortunately, 0.127d can be used to enable SPI mode on the card, after what 0.381 becomes fully functional.\
-Here's the trick:
-- Put 0.381 as BOOT.BIN on the card (provided in \SDL1\SDCARD\\).
-- Execute 0.127d from Atlas.
-- Execute BOOT.BIN from the SDL main menu.
-  - On the first attempt, "SD card init error" is displayed, SPI mode is now (silently) enabled.
-  - On the second attempt, 0.381 is successfully loaded, and can now communicate with the card properly.
+If "SD card init error" is displayed when attempting to read|write from|to the card, you have to use 0.127d instead.\
+The cool part is that executing 0.381 from 0.127d solves the compatibility issue.
 
-Note about the card file system:\
-FAT16 and FAT32 work with both versions.\
-exFAT only works with 0.381, so you can't use it if the 0.127d trick is required.
+Executing 0.381 from 0.127d, to access all features:
+- Make sure the card is formatted to FAT16 or FAT32.
+- Make sure 0.381 is on the card as BOOT.BIN (available in \\SDL1\\SDCARD\\).
+- Execute 0.127d from Sat Tools.
+- Execute BOOT.BIN from the SDL main menu (if "SD card init error" is displayed, a second attempt is required).
+- Enjoy 0.381.
 
-Available in \SDL2\SDCARD\\:
-- CODE.CFG:\
-The identification, load and start addresses of the code to execute.\
-It's provided as an example, the file name can be anything (as long as it's a .CFG).\
-When a (non-cfg) file is executed directly instead, the default is 0x06004000 for both addresses.
+Technically, 0.381 also supports exFAT, but you can use that file system only if your machine doesn't require the 0.127d trick.
+
+Available in \\SDL2\\SDCARD\\:
 - RAMEMPTY.BIN:\
 Select that file for restoration to reset the internal save memory from the software.\
 Basically the same as using "Clear" from the BIOS memory management.
@@ -75,28 +79,34 @@ Basically the same as using "Clear" from the BIOS memory management.
 Select that file for restoration to reset the cartridge save memory from the software.\
 Basically the same as using "Clear" from the BIOS memory management.\
 Compatible with cartridges that allow hardware direct save (official ones, some all-in-one variants, etc.).
+- CODE.CFG:\
+The identification, load and start addresses of the code to execute.\
+It's provided as an example, the file name can be anything (as long as it's a .CFG).\
+When a (non-CFG) file is executed directly instead, the default is 0x06004000 for both addresses.
 
-If you're looking for a specific cartridge firmware to put on the card, there's a collection available in \SGM\FIRMWARE\ (at your own risk).
+If you're looking for a specific cartridge firmware to put on the SD card, there's a collection available in \\SGM\\FIRMWARE\\.\
+The flashing is at your own risk, of course.
 
 ## documentation - Save Game Copier
 
 by slinga\
 version 3.6.18\
-entry location (1 for each set of saves): \SGC1\\, \SGC2\\\
+entry location: \\SGC1\\, \\SGC2\\\
+original documentation: \\README\\SGC.TXT\
 web: https://github.com/slinga-homebrew/Save-Game-Copier
 
-Because SGC can't access more than 254 saves in \SATSAVES\\, they're separated by name (first character):
-- A to M
-- N to Z
+Because it can't access more than 254 saves in \\SATSAVES\\, SGC uses 2 Atlas entries:
+- saves from A to M
+- saves from N to Z
 
 Please note that it can take a while before the list of saves on the CD is displayed for the first time (around 0.13 seconds per save).
 
 Changes since the original release:
-- Many saves were added, the total is now 332.
-- The eighth character of each .BUP is now always used to differentiate saves with identical internal names (A, B, and so on).
+- Many saves were added.
+- The eighth character of each .BUP name is now always used to differentiate saves with identical internal names (A, B, and so on).
 - The existing .BUP files were renamed to match the new format.
-- The save documentation is now to be found in \SAVEINFO\\:
-  - \_\_\_\_LIST.TXT includes general info, and basically replaces \SATSAVES\CREDITS.TXT.
+- The save documentation is now to be found in \\SAVEINFO\\:
+  - \_\_\_\_LIST.TXT includes general info, and basically replaces \\SATSAVES\\CREDITS.TXT.
   - .TXT files whose names start with \_ cover multiple saves from the same author.
   - .TXT files whose names match a .BUP cover that specific save only.
 
@@ -104,7 +114,8 @@ Changes since the original release:
 
 by slinga\
 version 0.99\
-entry location: \SGE\\\
+entry location: \\SGE\\\
+original documentation: \\README\\SGE.TXT\
 web: https://github.com/slinga-homebrew/Save-Game-Extractor
 
 It's the original release, without any modification.
@@ -113,17 +124,37 @@ It's the original release, without any modification.
 
 by The Rockin'-B\
 release 5\
-entry location: \SGM\\\
+entry location: \\SGM\\\
+original documentation: \\README\\SGM.TXT\
 web: http://www.rockin-b.de/saturn-rb-all-stars.html
+
+If you intend to use SGM for cartridge firmware flashing (at your own risk), they're located in \\SGM\\FIRMWARE\\.\
+Note that if you own an SDLoader module, the SDLoader software does it much faster.
 
 Changes since the original release:
 - The Atlas sprite and info screen were customised for Sat Tools.
 - The Atlas text description is now more straightforward, to reduce clutter.
 - The Atlas audio file was removed, to reduce creepyness.
 - The background is now fully black, for readability purpose.
-- \FIRMWARE\ now includes a total of 45 256KB firmwares (at your own risk).
+- Many firmwares were added.
+
+## documentation - Save To QR Code
+
+by Ervilsoft\
+version 1.000\
+entry location: \\SQR\\\
+original documentation: \\README\\SQR.TXT\
+web: https://segaxtreme.net/threads/sega-saturn-28th-anniversary-game-competition.25278/page-2#post-183550
+
+It's the original release, without any modification.
 
 ## history
+
+### version 2
+
+- Save To QR Code has joined forces!
+- The Atlas info screens for Save Game Extractor and Save Game Manager were improved.
+- The Atlas sprites are cooler now.
 
 ### version 1
 
@@ -132,6 +163,7 @@ Changes since the original release:
 ## credits
 
 - Artemio Urbina - Artemio's 240p Test Suite
+- Ervilsoft - Save To QR Code
 - Murzik - SDLoader
 - The Rockin'-B - Atlas, Save Game Manager
 - hitomi2500 - Artemio's 240p Test Suite
