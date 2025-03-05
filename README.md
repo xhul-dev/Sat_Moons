@@ -1,5 +1,5 @@
 # Sat Tools
-version 2\
+version 3\
 xhul - 2025\
 download: https://github.com/xhul-dev/Sat_Tools/releases
 \
@@ -9,6 +9,7 @@ reports: https://github.com/xhul-dev/Sat_Tools/issues
 
 This is a multi-boot Atlas CD image, so far including the following:
 - Artemio's 240p Test Suite 0.1
+- Memory Map Viewer
 - SDLoader 0.127d, 0.381
 - Save Game Copier 3.6.18 - 332 saves total
 - Save Game Extractor 0.99
@@ -17,7 +18,7 @@ This is a multi-boot Atlas CD image, so far including the following:
 
 It should be useful mostly to people who use at least 2 of those on a regular basis, from physical CDs.\
 The project is also my own tribute to the wonderful Atlas software.\
-At the main screen, pressing A allows to view which main features each software has to offer.\
+At the main screen, A shows information for the selected tool (usually features, sometimes controls|notes).\
 Feel free to let me know if something doesn't work as expected.\
 I wasn't able to test the functionality from any ODE, so i'm all ears.\
 Suggestions are also welcome, especially other useful tools that could be injected.
@@ -27,8 +28,8 @@ Before you ask, the following won't be available:
 
 ## documentation - Atlas
 
-by The Rockin'-B\
 version 05/12/04\
+by The Rockin'-B\
 original documentation: \\README\\ATLAS.TXT\
 web: http://www.rockin-b.de/saturn-atlascreator.html
 
@@ -38,19 +39,27 @@ Changes since the original release:
 
 ## documentation - Artemio's 240p Test Suite
 
-by Artemio Urbina, hitomi2500\
 version 0.1\
-entry location: \\ATS\\\
+by Artemio Urbina, hitomi2500\
+entry location: \\01ATS\\\
 original documentation: \\README\\ATS.TXT\
 web: https://github.com/hitomi2500/240pTestSuite
 
 It's the original release, without any modification.
 
+## documentation - Memory Map Viewer
+
+by Charles MacDonald\
+entry location: \\02MMV\\\
+original documentation: \\README\\MMV.TXT\
+
+It's the original release, without any modification.
+
 ## documentation - SDLoader
 
-by Murzik\
 version 0.127d, 0.381\
-entry location: \\SDL1\\, \\SDL2\\\
+by Murzik\
+entry location: \\03SDL1\\, \\04SDL2\\\
 original documentation: \\README\\SDL1.TXT, \\README\\SDL2.TXT\
 web: https://segaxtreme.net/threads/sdloader-v0-12-run-binaries-from-sd-card-and-backup-restore-saves.25275/
 
@@ -64,14 +73,14 @@ The cool part is that executing 0.381 from 0.127d solves the compatibility issue
 
 Executing 0.381 from 0.127d, to access all features:
 - Make sure the card is formatted to FAT16 or FAT32.
-- Make sure 0.381 is on the card as BOOT.BIN (available in \\SDL1\\SDCARD\\).
+- Make sure 0.381 is on the card as BOOT.BIN (available in \\03SDL1\\SDCARD\\).
 - Execute 0.127d from Sat Tools.
 - Execute BOOT.BIN from the SDL main menu (if "SD card init error" is displayed, a second attempt is required).
 - Enjoy 0.381.
 
 Technically, 0.381 also supports exFAT, but you can use that file system only if your machine doesn't require the 0.127d trick.
 
-Available in \\SDL2\\SDCARD\\:
+Available in \\04SDL2\\SDCARD\\:
 - RAMEMPTY.BIN:\
 Select that file for restoration to reset the internal save memory from the software.\
 Basically the same as using "Clear" from the BIOS memory management.
@@ -84,14 +93,14 @@ The identification, load and start addresses of the code to execute.\
 It's provided as an example, the file name can be anything (as long as it's a .CFG).\
 When a (non-CFG) file is executed directly instead, the default is 0x06004000 for both addresses.
 
-If you're looking for a specific cartridge firmware to put on the SD card, there's a collection available in \\SGM\\FIRMWARE\\.\
+If you're looking for a specific cartridge firmware to put on the SD card, there's a collection available in \\08SGM\\FIRMWARE\\.\
 The flashing is at your own risk, of course.
 
 ## documentation - Save Game Copier
 
-by slinga\
 version 3.6.18\
-entry location: \\SGC1\\, \\SGC2\\\
+by slinga\
+entry location: \\05SGC1\\, \\06SGC2\\\
 original documentation: \\README\\SGC.TXT\
 web: https://github.com/slinga-homebrew/Save-Game-Copier
 
@@ -107,14 +116,14 @@ Changes since the original release:
 - The existing .BUP files were renamed to match the new format.
 - The save documentation is now to be found in \\SAVEINFO\\:
   - \_\_\_\_LIST.TXT includes general info, and basically replaces \\SATSAVES\\CREDITS.TXT.
-  - .TXT files whose names start with \_ cover multiple saves from the same author.
-  - .TXT files whose names match a .BUP cover that specific save only.
+  - Other files whose names start with \_ cover multiple saves from the same author.
+  - Other files whose names match a .BUP cover that specific save only.
 
 ## documentation - Save Game Extractor
 
-by slinga\
 version 0.99\
-entry location: \\SGE\\\
+by slinga\
+entry location: \\07SGE\\\
 original documentation: \\README\\SGE.TXT\
 web: https://github.com/slinga-homebrew/Save-Game-Extractor
 
@@ -122,13 +131,13 @@ It's the original release, without any modification.
 
 ## documentation - Save Game Manager
 
-by The Rockin'-B\
 release 5\
-entry location: \\SGM\\\
+by The Rockin'-B\
+entry location: \\08SGM\\\
 original documentation: \\README\\SGM.TXT\
 web: http://www.rockin-b.de/saturn-rb-all-stars.html
 
-If you intend to use SGM for cartridge firmware flashing (at your own risk), they're located in \\SGM\\FIRMWARE\\.\
+If you intend to use SGM for cartridge firmware flashing (at your own risk), they're located in \\08SGM\\FIRMWARE\\.\
 Note that if you own an SDLoader module, the SDLoader software does it much faster.
 
 Changes since the original release:
@@ -140,15 +149,20 @@ Changes since the original release:
 
 ## documentation - Save To QR Code
 
-by Ervilsoft\
 version 1.000\
-entry location: \\SQR\\\
+by Ervilsoft\
+entry location: \\09SQR\\\
 original documentation: \\README\\SQR.TXT\
 web: https://segaxtreme.net/threads/sega-saturn-28th-anniversary-game-competition.25278/page-2#post-183550
 
 It's the original release, without any modification.
 
 ## history
+
+### version 3
+
+- Memory Map Viewer has joined forces!
+- The CD IP is now more conventional, for compatibility purpose.
 
 ### version 2
 
@@ -163,6 +177,7 @@ It's the original release, without any modification.
 ## credits
 
 - Artemio Urbina - Artemio's 240p Test Suite
+- Charles MacDonald - Memory Map Viewer
 - Ervilsoft - Save To QR Code
 - Murzik - SDLoader
 - The Rockin'-B - Atlas, Save Game Manager
