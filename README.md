@@ -24,7 +24,7 @@ At the main screen, [A] shows information for the active entry (features or stuf
 Feel free to let me know if something doesn't work as expected.\
 Suggestions are also welcome, especially other stuff worth injecting.
 
-Due to some partial|total incompatibility with Atlas, the following weren't injected:
+Due to some significant incompatibility with Atlas, the following weren't injected:
 - Save Data Manager
 
 ## documentation - Atlas
