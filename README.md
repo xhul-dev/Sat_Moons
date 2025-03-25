@@ -25,7 +25,7 @@ Feel free to let me know if something doesn't work as expected.\
 Suggestions are also welcome, especially other stuff worth injecting.
 
 The following seem to be partially|totally incompatible with Atlas:
-- Save Data Manager - incompatibility with Atlas
+- Save Data Manager
 
 ## documentation - Atlas
 
