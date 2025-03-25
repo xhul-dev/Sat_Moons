@@ -20,12 +20,12 @@ So far, it includes the following:
 - Save Game Manager 5 - 45 firmwares total
 - Save To QR Code 1.000
 
-At the main screen, [A] shows information for the active entry (features or stuff worth knowing).\
+At the main screen, [A] shows information for the active entry (features or things to know).\
 Feel free to let me know if something doesn't work as expected.\
 Suggestions are also welcome, especially other stuff worth injecting.
 
-Due to some significant incompatibility with Atlas, the following weren't injected:
-- Save Data Manager
+Things i wanted to inject, but won't:
+- Save Data Manager - significant incompatibility with Atlas
 
 ## documentation - Atlas
 
