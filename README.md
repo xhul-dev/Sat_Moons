@@ -179,6 +179,7 @@ Known issues:
 - The main background is significantly less dull.
 - The entry sprites are now smaller spheres without rings.
 - The CD icon was updated to match the new project name.
+- In the documentation, added an instruction specific to Pseudo Saturn Kai.
 - Known issues have been added to the documentation.
 
 ### version 3
