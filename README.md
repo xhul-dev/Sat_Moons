@@ -20,6 +20,7 @@ So far, it includes the following:
 - Save Game Manager 5 - 45 firmwares total
 - Save To QR Code 1.000
 
+**If you're using Pseudo Saturn Kai, it's required to load the CD with [Z].**\
 At the main screen, [A] shows information for the active entry (features or things to know).\
 Feel free to let me know if something doesn't work as expected.\
 Suggestions are also welcome, especially other stuff worth injecting.
